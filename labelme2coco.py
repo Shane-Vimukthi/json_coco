@@ -32,7 +32,7 @@ class labelme2coco(object):
                 data = json.load(fp)
                 self.images.append(self.image(data, num))
                 for shapes in data["shapes"]:
-                    label = shapes["label"].split("_")
+                    label = shapes["label"].split(" ")
                     if label not in self.label:
                         self.label.append(label)
                     points = shapes["points"]
